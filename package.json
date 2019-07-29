@@ -1,0 +1,39 @@
+{
+  "name": "example-sequelize-v5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "seeders-dev": "npx sequelize-cli db:seed:all --seeders-path ./src/db/seeders-dev",
+    "migrations": "npx sequelize-cli db:migrate",
+    "start": "babel-node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "mysql": "^2.13.0",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.11.0"
+  },
+  " _moduleAliases ": {
+    "@connection": "./src/database/connection",
+    "@models": "./src/database/models",
+    "@controllers": "./src/controllers",
+    "@routers": "./src/routers"
+  }
+}
