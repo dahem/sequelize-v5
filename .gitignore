@@ -1,0 +1,5 @@
+# libs javascript
+node_modules/
+package-lock.json
+# ignore sensitive config data
+.env

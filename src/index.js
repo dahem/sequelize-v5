@@ -1,5 +1,5 @@
-import { Task } from 'db/models';
+const app = require('./app');
 
-Task.findAll().then(x => console.log('result', x));
-console.log('hello world');
-fdsf  fds dsfs 
+app.listen(process.env.APP_PORT, () => {
+  console.info(`Server running on port ${process.env.APP_PORT}`);
+});
