@@ -8,9 +8,8 @@ import helmet from 'helmet';
 import cors from 'cors';
 
 moment.locale('pt-BR');
-
 const app = express();
-app.keepAliveTimeout = process.env.APP_TIME_TO_DISCONNECT;
+app.keepAliveTimeout = process.env.APP_TIME_TO_DISCONNECT || 5000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
