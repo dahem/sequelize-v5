@@ -1,8 +1,20 @@
 {
-  "presets": ["@babel/preset-env"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "esmodules": true
+        }
+      }
+    ]
+  ],
   "plugins": [
-    ["module-resolver", {
-      "root": ["./src"],
-    }]
+    [
+      "module-resolver",
+      {
+        "root": ["./src"]
+      }
+    ]
   ]
 }
