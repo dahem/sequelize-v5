@@ -6,6 +6,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import cors from 'cors';
+import routes from './routes';
 
 moment.locale('pt-BR');
 const app = express();
@@ -16,6 +17,8 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(cors());
 app.use(helmet());
+
+app.use(routes);
 
 app.use((error, req, res) => res.status(500).send({ error }));
 

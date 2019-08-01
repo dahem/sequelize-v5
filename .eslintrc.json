@@ -1,7 +1,9 @@
 {
   "extends": ["airbnb"],
   "plugins": ["prettier"],
-  "rules": {},
+  "rules": {
+    "import/prefer-default-export": "off"
+  },
   "settings": {
     "import/resolver": {
       "node": {
