@@ -1,5 +1,7 @@
-import Task from 'db/models/task';
+import models from 'db/models';
+
+const { Task, User } = models;
 
 export function getAll() {
-  return Task.findAll();
+  return Task.findAll({ include: [User] });
 }

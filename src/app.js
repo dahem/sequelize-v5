@@ -1,5 +1,4 @@
 import moment from 'moment';
-import 'moment/locale/pt-br';
 import morgan from 'morgan';
 import express from 'express';
 import bodyParser from 'body-parser';
@@ -9,6 +8,7 @@ import cors from 'cors';
 import routes from './routes';
 
 moment.locale('pt-BR');
+console.log(moment().format());
 const app = express();
 app.keepAliveTimeout = process.env.APP_TIME_TO_DISCONNECT || 5000;
 app.use(bodyParser.urlencoded({ extended: false }));

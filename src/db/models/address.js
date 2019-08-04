@@ -1,12 +1,12 @@
 import Sequelize, { Model } from 'sequelize';
 
 export default (sequelize) => {
-  class Task extends Model {
+  class Address extends Model {
     static associate() {
       this.belongsTo(sequelize.models.User, { foreignKey: 'userId' });
     }
   }
-  Task.init(
+  Address.init(
     {
       name: {
         type: Sequelize.STRING,
@@ -16,14 +16,14 @@ export default (sequelize) => {
     {
       sequelize,
       timestamps: true,
-      tableName: 'task',
+      tableName: 'address',
       paranoid: true,
-      comment: 'tasks',
       name: {
-        singular: 'task',
-        plural: 'tasks',
+        singular: 'address',
+        plural: 'addresses',
       },
+      comment: 'addresses',
     },
   );
-  return Task;
+  return Address;
 };

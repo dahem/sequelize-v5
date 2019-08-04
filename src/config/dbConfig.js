@@ -10,8 +10,6 @@ module.exports = {
       decimalNumbers: true,
     },
   },
-  test: {
-  },
-  production: {
-  }
+  test: {},
+  production: {},
 };
