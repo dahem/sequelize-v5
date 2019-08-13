@@ -27,3 +27,7 @@ Content-Type: application/json
     "name": "usgfgfggfdggeffr",
     "email": "fdsfsdfdsfs"
 }
+
+###
+
+DELETE http://localhost:6666/users/1 HTTP/1.1

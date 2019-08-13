@@ -1,15 +1,10 @@
 import express from 'express';
 import * as controller from 'controllers/task';
+import { addBasicRouters } from 'helpers/routerHelper';
+import models from 'db/models';
 
 const router = express.Router();
+const { Task } = models;
 
-router.get('/', async (req, res, next) => {
-  try {
-    const tasks = await controller.getAll();
-    return res.status(200).send(tasks);
-  } catch (e) {
-    return next(e);
-  }
-});
-
+addBasicRouters(router, controller, Task, { method: ['getAll'] });
 export default router;

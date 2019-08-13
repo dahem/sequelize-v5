@@ -1,15 +1,11 @@
 import express from 'express';
 import * as controller from 'controllers/address';
+import { addBasicRouters } from 'helpers/routerHelper';
+import models from 'db/models';
 
 const router = express.Router();
+const { Address } = models;
 
-router.get('/', async (req, res, next) => {
-  try {
-    const addresses = await controller.getAll();
-    return res.status(200).send(addresses);
-  } catch (e) {
-    return next(e);
-  }
-});
+addBasicRouters(router, controller, Address);
 
 export default router;
