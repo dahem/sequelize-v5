@@ -1,6 +1,6 @@
 import { createAndDropTable, timestampsColumns } from '../util';
 
-const tableName = 'User';
+const tableName = 'Client';
 
 const defineTable = Sequelize => ({
   id: {
@@ -11,9 +11,6 @@ const defineTable = Sequelize => ({
   name: {
     type: Sequelize.STRING,
     allowNull: false,
-  },
-  email: {
-    type: Sequelize.STRING,
   },
   ...timestampsColumns(Sequelize),
 });

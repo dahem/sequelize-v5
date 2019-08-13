@@ -5,8 +5,8 @@ const router = express.Router();
 
 router.get('/', async (req, res, next) => {
   try {
-    const tasks = await controller.getAll();
-    return res.status(200).send(tasks);
+    const addresses = await controller.getAll();
+    return res.status(200).send(addresses);
   } catch (e) {
     return next(e);
   }

@@ -1,20 +1,24 @@
 import { createAndDropTable, timestampsColumns } from '../util';
 
-const tableName = 'task';
+const tableName = 'ClientProduct';
+
 const defineTable = Sequelize => ({
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  name: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  userId: {
+  clientId: {
     type: Sequelize.INTEGER,
     references: {
-      model: 'user',
+      model: 'Client',
+      key: 'id',
+    },
+  },
+  productId: {
+    type: Sequelize.INTEGER,
+    references: {
+      model: 'Product',
       key: 'id',
     },
   },

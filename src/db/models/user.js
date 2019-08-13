@@ -12,18 +12,22 @@ export default (sequelize) => {
       name: {
         type: Sequelize.STRING,
         allowNull: false,
+        validate: { len: { args: [5, 10], msg: 'name mast be len [2, 10]' } },
+      },
+      email: {
+        type: Sequelize.STRING,
+        validate: { isEmail: { msg: 'Invalid email' } },
       },
     },
     {
+      tableName: 'User',
       sequelize,
       imestamps: true,
-      tableName: 'user',
       paranoid: true,
       name: {
         singular: 'user',
         plural: 'users',
       },
-      comment: 'users',
     },
   );
   return User;

@@ -15,10 +15,9 @@ export default (sequelize) => {
     },
     {
       sequelize,
+      tableName: 'Task',
       timestamps: true,
-      tableName: 'task',
       paranoid: true,
-      comment: 'tasks',
       name: {
         singular: 'task',
         plural: 'tasks',

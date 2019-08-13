@@ -15,14 +15,10 @@ export default (sequelize) => {
     },
     {
       sequelize,
+      tableName: 'Address',
       timestamps: true,
-      tableName: 'address',
       paranoid: true,
-      name: {
-        singular: 'address',
-        plural: 'addresses',
-      },
-      comment: 'addresses',
+      name: { singular: 'address', plural: 'addresses' },
     },
   );
   return Address;

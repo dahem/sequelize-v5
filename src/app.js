@@ -8,7 +8,6 @@ import cors from 'cors';
 import routes from './routes';
 
 moment.locale('pt-BR');
-console.log(moment().format());
 const app = express();
 app.keepAliveTimeout = process.env.APP_TIME_TO_DISCONNECT || 5000;
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -20,6 +19,10 @@ app.use(helmet());
 
 app.use(routes);
 
-app.use((error, req, res) => res.status(500).send({ error }));
+// TODO check when is call
+app.use((errors, req, res) => {
+  console.log(Object.keys(errors));
+  res.status(500).send({ errors });
+});
 
 export default app;
