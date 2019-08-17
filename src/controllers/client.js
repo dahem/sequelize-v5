@@ -1,20 +1,8 @@
 import models from 'db/models';
+import baseController from 'controllers/util/baseController';
 
-const { Client, Product } = models;
+const { Client } = models;
 
-export function getAll() {
-  return Client.findAll();
-}
-export function getById(id) {
-  return Client.findByPk(id, { include: [Product] });
-}
-
-export async function create(body) {
-  const client = await Client.create(body, { include: [Product] });
-  return getById(client.id);
-}
-
-export async function update(id, body) {
-  await Client.fullUpdate(id, body);
-  return getById(id);
-}
+export default {
+  ...baseController(Client),
+};

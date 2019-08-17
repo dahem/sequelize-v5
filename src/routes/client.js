@@ -1,5 +1,5 @@
 import express from 'express';
-import * as controller from 'controllers/client';
+import controller from 'controllers/client';
 import addBasicRouters from 'routes/util/addBasicRouters';
 import models from 'db/models';
 

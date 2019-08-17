@@ -25,7 +25,8 @@ Content-Type: application/json
 
 {
     "name": "cfghf",
-    "email": "hkk@gmail.com"
+    "email": "hkk@gmail.com",
+    "tasks": [{"name":"taskss"}]
 }
 
 ###

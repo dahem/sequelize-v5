@@ -1,7 +1,8 @@
 import models from 'db/models';
+import baseController from 'controllers/util/baseController';
 
-const { Task, User } = models;
+const { Task } = models;
 
-export function getAll() {
-  return Task.findAll({ include: [User] });
-}
+export default {
+  ...baseController(Task),
+};

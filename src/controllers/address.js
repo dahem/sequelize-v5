@@ -1,7 +1,8 @@
 import models from 'db/models';
+import baseController from 'controllers/util/baseController';
 
-const { Address, User } = models;
+const { Address } = models;
 
-export function getAll() {
-  return Address.findAll({ include: [User] });
-}
+export default {
+  ...baseController(Address),
+};
