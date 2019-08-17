@@ -1,7 +1,7 @@
 import { body, sanitizeParam, param } from 'express-validator';
-import validate from 'middlewares/verifyInput';
+import validate from 'routes/middlewares/verifyInput';
 
-export function addBasicRouters(router, controller, model, options = {}) {
+export default function (router, controller, model, options = {}) {
   const { methods } = options;
 
   if (!methods || methods.includes('getAll')) {

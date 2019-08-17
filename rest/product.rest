@@ -1,0 +1,11 @@
+http://localhost:6666/products
+
+###
+POST http://localhost:6666/products HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "producto nuevo",
+    "clients": [{"name":"client nuevo"}]
+}
+

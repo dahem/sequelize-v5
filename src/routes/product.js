@@ -1,11 +1,11 @@
 import express from 'express';
-import * as controller from 'controllers/address';
+import * as controller from 'controllers/product';
 import addBasicRouters from 'routes/util/addBasicRouters';
 import models from 'db/models';
 
 const router = express.Router();
-const { Address } = models;
+const { Product } = models;
 
-addBasicRouters(router, controller, Address);
+addBasicRouters(router, controller, Product);
 
 export default router;

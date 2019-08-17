@@ -1,1 +1,24 @@
+###
 http://localhost:6666/clients
+
+###
+POST http://localhost:6666/clients HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "cliente nuevo",
+    "products": [{"name":"producto nuevo"}]
+}
+
+###
+PATCH http://localhost:6666/clients/9 HTTP/1.1
+Content-Type: application/json
+
+{
+  "id":9,
+    "name": "cliente nuevo utalizado",
+    "products": [
+      {"id":9, "name":"producto atualizado"},
+      { "name":"producto atualizado"}
+      ]
+}

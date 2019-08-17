@@ -3,18 +3,18 @@ import models from 'db/models';
 const { Client, Product } = models;
 
 export function getAll() {
-  return Client.findAll();
+  return Product.findAll();
 }
 export function getById(id) {
-  return Client.findByPk(id, { include: [Product] });
+  return Product.findByPk(id, { include: [Client] });
 }
 
 export async function create(body) {
-  const client = await Client.create(body, { include: [Product] });
-  return getById(client.id);
+  const user = await Product.create(body, { include: [Client] });
+  return getById(user.id);
 }
 
 export async function update(id, body) {
-  await Client.fullUpdate(id, body);
+  await Product.fullUpdate(id, body);
   return getById(id);
 }
